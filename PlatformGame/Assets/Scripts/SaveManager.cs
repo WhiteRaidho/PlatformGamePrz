@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public static class SaveManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public static void Save(GameManager.GameManagerProperties gm)
     {
-        
+        PlayerPrefs.SetInt("unlockedLevel", gm.unlockedLevel);
+        PlayerPrefs.SetInt("money", gm.money);
+        PlayerPrefs.Save();
     }
 
-    // Update is called once per frame
-    void Update()
+    public static GameManager.GameManagerProperties Load()
     {
-        
+        GameManager.GameManagerProperties result = new GameManager.GameManagerProperties();
+        result.unlockedLevel = PlayerPrefs.GetInt("unlockedLevel");
+        result.money = PlayerPrefs.GetInt("money");
+        if (result.unlockedLevel <= 0) result.unlockedLevel = 1;
+        if (result.money < 0) result.money = 0;
+        return result;
     }
 }
