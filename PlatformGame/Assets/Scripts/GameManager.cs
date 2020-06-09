@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     [Header("Game properties")]
     public GameManagerProperties saveProperties;
+	
+	[Header("Levels")]
+    public string currentLevelName;
+    public int currentLevel;
+    public static int maxLevel = 1;
 
     private void Awake()
     {
@@ -20,6 +26,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+	
+	public void LoadLevel(string levelName)
+    {
+        Save();
+        currentLevelName = levelName;
+        SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
     }
 
     public void Save()
