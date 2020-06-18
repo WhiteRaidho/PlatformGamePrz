@@ -52,7 +52,7 @@ public class PipeEditor : MonoBehaviour
             Vector3 click = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int p = grid.WorldToCell(click);
             //tilemap.SetTile(p, null);
-            if (p != prevClickPos)
+            if(p != prevClickPos)
             {
                 prevClickPos = p;
                 UpdateCells(p, true);
@@ -67,7 +67,7 @@ public class PipeEditor : MonoBehaviour
 
     public void UpdateCells(Vector3Int pos, bool erase = false)
     {
-        if (erase)
+        if(erase)
         {
             tilemap.SetTile(pos, null);
             FindStart();
@@ -82,8 +82,8 @@ public class PipeEditor : MonoBehaviour
         warningText.SetText(text);
         warningText.GetComponent<Animator>().SetTrigger("PopUp");
     }
-
-
+    
+    
 
     public void FindStart()
     {
@@ -91,7 +91,7 @@ public class PipeEditor : MonoBehaviour
     }
     public void SetStart(Vector3Int pos)
     {
-        if (tilemap.GetTile(new Vector3Int(pos.x + 1, pos.y, pos.z)) == rightLeftTile
+        if(tilemap.GetTile(new Vector3Int(pos.x + 1, pos.y, pos.z)) == rightLeftTile
            || tilemap.GetTile(new Vector3Int(pos.x + 1, pos.y, pos.z)) == upLeftTile
            || tilemap.GetTile(new Vector3Int(pos.x + 1, pos.y, pos.z)) == downLeftTile)
         {
@@ -101,10 +101,9 @@ public class PipeEditor : MonoBehaviour
             tilemap.SetTile(pos, startLeftTile[1]);
             pos.y--;
             tilemap.SetTile(pos, startLeftTile[2]);
-        }
-        else if (tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == rightLeftTile
-                || tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == upRightTile
-                || tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == downRightTile)
+        } else if(tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == rightLeftTile
+                  || tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == upRightTile
+                  || tilemap.GetTile(new Vector3Int(pos.x - 1, pos.y, pos.z)) == downRightTile)
         {
             pos.y++;
             tilemap.SetTile(pos, startRightTile[0]);
