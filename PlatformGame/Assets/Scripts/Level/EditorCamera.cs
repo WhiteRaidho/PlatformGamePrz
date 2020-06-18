@@ -8,7 +8,7 @@ public class EditorCamera : MonoBehaviour
 
     [Range(1f, 10f)]
     public float camSpeed = 3f;
-
+    
     private void Update()
     {
         Vector3 pos = this.transform.position;

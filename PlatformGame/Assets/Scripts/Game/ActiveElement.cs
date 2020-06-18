@@ -22,7 +22,7 @@ public class ActiveElement : MonoBehaviour
             }
             active = true;
             Action();
-            if (animator) animator.SetBool("Activate", true);
+            if(animator) animator.SetBool("Activate", true);
         }
     }
 
@@ -36,7 +36,7 @@ public class ActiveElement : MonoBehaviour
             }
             active = false;
             Action();
-            if (animator) animator.SetBool("Activate", false);
+            if(animator) animator.SetBool("Activate", false);
         }
     }
 

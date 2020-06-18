@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class SelectLevel : MonoBehaviour
 {
-	[SerializeField]
+    [SerializeField]
     TMP_Text text;
 
     int level;
 
     [SerializeField]
     GameObject lockPanel;
-    
-	public void SetLevel(int level)
+
+    public void SetLevel(int level)
     {
         this.level = level;
         text.SetText(level.ToString());
