@@ -13,8 +13,9 @@ public class CustomLevels : MonoBehaviour
 
     void Start()
     {
+        if (!System.IO.Directory.Exists(Application.persistentDataPath + "/saves")) System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/saves");
         string[] saves = System.IO.Directory.GetFiles(Application.persistentDataPath + "/saves");
-        foreach(string save in saves)
+        foreach (string save in saves)
         {
             System.IO.FileInfo info = new System.IO.FileInfo(save);
             GameObject obj = Instantiate(levelSelectButton, contentObject);

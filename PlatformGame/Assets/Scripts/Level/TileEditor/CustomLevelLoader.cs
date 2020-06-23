@@ -16,6 +16,7 @@ public class CustomLevelLoader : MonoBehaviour
     public void Load(string fileName)
     {
         fileName = Application.persistentDataPath + "/saves/" + fileName;
+        if (!System.IO.Directory.Exists(fileName)) System.IO.Directory.CreateDirectory(fileName);
         if (System.IO.File.Exists(fileName))
         {
             string json = System.IO.File.ReadAllText(fileName);
