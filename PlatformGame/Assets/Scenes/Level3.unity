@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2569,7 +2569,7 @@ PrefabInstance:
     - target: {fileID: 8302810853089777507, guid: b42ef59780321bd408ec13425c7c2c33,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5000006
+      value: -0.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 8302810853089777507, guid: b42ef59780321bd408ec13425c7c2c33,
         type: 3}
@@ -2589,7 +2589,7 @@ PrefabInstance:
     - target: {fileID: 8302810853676723600, guid: b42ef59780321bd408ec13425c7c2c33,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5000006
+      value: -0.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 8302810853676723600, guid: b42ef59780321bd408ec13425c7c2c33,
         type: 3}
@@ -3811,6 +3811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621448731584945444, guid: 7f7714242c5d1d1478ac3729239f703d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4228035957702549309, guid: 7f7714242c5d1d1478ac3729239f703d,
         type: 3}

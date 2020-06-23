@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     public void Death()
     {
         HP--;
-        if (HP == 0)
+        if (HP <= 0)
         {
             LevelManager.instance.GameOver();
         }

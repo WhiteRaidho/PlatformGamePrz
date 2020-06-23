@@ -110,7 +110,7 @@ public class LevelManager : MonoBehaviour
         if (Demo.instance) Demo.instance.StopRecording();
         LockMovement(true);
         winPanel.SetActive(true);
-        if(GameManager.instance.currentLevel == GameManager.maxLevel)
+        if(GameManager.instance.currentLevel == GameManager.maxLevel || GameManager.instance.currentLevelName.Equals("CustomLevel"))
         {
             nextLevelButton.gameObject.SetActive(false);
         }

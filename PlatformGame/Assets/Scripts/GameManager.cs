@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [Header("Levels")]
     public string currentLevelName;
     public int currentLevel;
+    public string customLevelName = "";
+
     public static int maxLevel = 3;
 
     private void Awake()
@@ -25,14 +28,20 @@ public class GameManager : MonoBehaviour
             Load();
         } else
         {
-            Destroy(this);
+            currentLevelName = instance.currentLevelName;
+            currentLevel = instance.currentLevel;
+            customLevelName = instance.customLevelName;
+            saveProperties = instance.saveProperties;
+            Destroy(instance.gameObject);
+            instance = this;
+            DontDestroyOnLoad(this);
         }
     }
 
     public void LoadLevel(string levelName)
     {
-        Save();
-        currentLevelName = levelName;
+        instance.Save();
+        instance.currentLevelName = levelName;
         SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
     }
 
