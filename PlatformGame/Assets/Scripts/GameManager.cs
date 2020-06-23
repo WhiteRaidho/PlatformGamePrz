@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Levels")]
     public string currentLevelName;
     public int currentLevel;
-    public static int maxLevel = 4;
+    public static int maxLevel = 3;
 
     private void Awake()
     {

@@ -73,6 +73,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void GameOver() {
+        if (Demo.instance) Demo.instance.StopRecording();
         LockMovement(true);
         gameOverPanel.SetActive(true);
         if (adWatched) adPanel.SetActive(false);
@@ -106,6 +107,7 @@ public class LevelManager : MonoBehaviour
 
     public void Win()
     {
+        if (Demo.instance) Demo.instance.StopRecording();
         LockMovement(true);
         winPanel.SetActive(true);
         if(GameManager.instance.currentLevel == GameManager.maxLevel)
@@ -119,6 +121,7 @@ public class LevelManager : MonoBehaviour
 
     public void WatchAd()
     {
+        if (Demo.instance) Demo.instance.StartRecording();
         adWatched = true;
         gameOverPanel.SetActive(false);
         adButton.interactable = false;
